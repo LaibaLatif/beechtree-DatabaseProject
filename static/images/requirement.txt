@@ -1,0 +1,6 @@
+Flask             3.0.3
+Flask-PyMongo     2.3.0
+Flask-SQLAlchemy  3.1.1
+pip               24.0
+pymongo           4.7.2
+SQLAlchemy        2.0.30

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scarfs</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Scarfs</h1>
+        <a href="{{ url_for('add_scarf') }}" class="btn">Add New Scarf</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for scarf in scarfs %}
+                <tr>
+                    <td>{{ scarf['product_id'] }}</td>
+                    <td>{{ scarf['color'] }}</td>
+                    <td>${{ scarf['price'] }}</td>
+                    <td>{{ scarf['quantity'] }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_scarf', id=scarf['_id']) }}" class="btn">Edit</a>
+                        <form action="{{ url_for('delete_scarf', id=scarf['_id']) }}" method="post" style="display:inline;">
+                            <button type="submit" class="btn">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>

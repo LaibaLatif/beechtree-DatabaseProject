@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style4.css') }}">
+    <title>Add Jewelry</title>
+</head>
+<body>
+    <div>
+    <h1>Add New Jewelry</h1>
+    <form action="{{ url_for('add_jewelry') }}" method="post">
+        <label for="product_id">Product ID:</label>
+        <input type="text" id="product_id" name="product_id" required><br><br>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" id="price" name="price" required><br><br>
+        
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+        
+        <input type="submit" value="Add Jewelry">
+    </form>
+    <a href="{{ url_for('jewelry') }}">Back to Jewelry</a>
+</div>
+</body>
+</html>

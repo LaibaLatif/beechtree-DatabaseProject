@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style4.css') }}">
+    <title>Add Unstitch</title>
+</head>
+<body>
+    <div>
+        <h1>Add New Unstitch</h1>
+        <form action="{{ url_for('add_unstitch') }}" method="post">
+            <label for="product_id">Product ID:</label>
+            <input type="text" id="product_id" name="product_id" required>
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="price">Price:</label>
+            <input type="number" step="0.01" id="price" name="price" required>
+            
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+            
+            <input type="submit" value="Add Unstitch">
+        </form>
+        <a href="{{ url_for('unstitch') }}">Back to Unstitch</a>
+    </div>
+</body>
+</html>

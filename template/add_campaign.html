@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Campaign</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style4.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Campaign</h1>
+        <form action="{{ url_for('add_campaign') }}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="goal_amount">Goal Amount:</label>
+            <input type="number" id="goal_amount" name="goal_amount" required>
+            <label for="current_amount">Current Amount:</label>
+            <input type="number" id="current_amount" name="current_amount" required>
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" name="deadline" required>
+            <input type="submit" value="Add Campaign">
+        </form>
+        <a href="{{ url_for('campaigns') }}" class="btn">Back to Campaigns</a>
+    </div>
+</body>
+</html>
